@@ -24,10 +24,10 @@
 			<!-- menu -->
 			<div class="col-md-12">
 				<ol class="breadcrumb">
-					<li><router-link to="/">Home</router-link></li>
-					<li><router-link to="/photogalery">Photogalery</router-link></li>
-					<li><router-link to="/feedback">Feedback</router-link></li>
-					<li><router-link to="/about">About us</router-link></li>
+					<li><router-link to="/">Главная</router-link></li>
+					<li><router-link to="/photogalery">Галерея</router-link></li>
+					<li><router-link to="/feedback">Обратная связь</router-link></li>
+					<li><router-link to="/about">О нас</router-link></li>
 				</ol>
 			</div>
 			
@@ -37,17 +37,22 @@
 				<router-view></router-view>
 			</div>
 			<div class="col-md-4">
-				<!-- info  -->
-				<div class="info">
-					<span class="info-title">
-						<span>bass<i>funk</i></span>
-					</span>
-					<div class="info-body">
-						&mdash; is a <span class="a">global community</span> where millions of fans discover new music, and directly connect with and fairly compensate the artists who make it.
-					</div>
-				</div>
 				<!-- search -->
 				<v-search></v-search>
+				<!-- info  -->
+				<div class="col-md-12">
+					<div class="info">
+						<span class="info-title">
+							<span>bass<i>funk</i></span>
+						</span>
+						<div class="info-body">
+							&mdash; is a <span class="a">global community</span> where millions of fans discover new music, and directly connect with and fairly compensate the artists who make it.
+						</div>
+					</div>
+				</div>
+
+				<!-- user panel  -->
+				<v-user v-if="!this.user"></v-user>
 			</div>
 			<!-- menu -->
 

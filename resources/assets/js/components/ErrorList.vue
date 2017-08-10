@@ -1,7 +1,7 @@
 <template>
   <div id="errors">
     <div class="wall-danger">
-      <span v-for="item in this.errors">- {{ item[0] }}</span>
+      <span v-for="item in this.errors">- {{ item[0] }}<br /></span>
     </div>
   </div>
 </template>

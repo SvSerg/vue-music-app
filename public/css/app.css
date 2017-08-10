@@ -249,6 +249,10 @@ hr {
   margin: 0;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .grey {
   color: #999;
 }
@@ -534,7 +538,7 @@ input[type=range]:focus::-ms-fill-upper {
 /* info */
 
 .info {
-  margin-top: 10px;
+  margin: 30px 0;
   text-align: center;
 }
 

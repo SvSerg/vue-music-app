@@ -4,11 +4,13 @@ import router from './router';
 import Player from './components/Player';
 import Loading from './components/Loading';
 import SearchStream from './components/SearchStream';
+import UserPanel from './components/UserPanel';
 import './api';
 
 Vue.component('vue-player', Player);
 Vue.component('v-loading', Loading);
 Vue.component('v-search', SearchStream);
+Vue.component('v-user', UserPanel);
 
 new Vue({
   el: '#app',
