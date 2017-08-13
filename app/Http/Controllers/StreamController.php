@@ -26,6 +26,9 @@ class StreamController extends Controller {
 		return response()->json($items);
 	}
 
+	/*
+	*	GET COUNT OF SEARCH RESULT
+	*/
 	public function countSearch(Request $request) {
     $this->validate($request, [
       'search' => 'required|max:255',

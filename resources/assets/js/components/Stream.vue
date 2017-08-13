@@ -19,7 +19,7 @@
         <div class="stream-buttons">
           <span @click="changeTrack(key, true)">play</span>
           <span>like</span>
-          <span>add in playlist</span>
+          <span v-if="!this.user" @click="addInPlaylist(item)">add in playlist</span>
         </div>
       </div>
     </div>
@@ -28,13 +28,29 @@
 </template>
 
 <script>
+import toastr from 'toastr';
+import '../api';
+
 export default {
   name: 'stream',
   props: ['items'],
   methods: {
     changeTrack(id, autoload, trackList = this.$props.items) {
       // do not be scared , nothing else .
-      return this.$parent.$options.parent.$children[0].changeTrack(id, autoload, trackList);
+      return this.$root.$children[0].changeTrack(id, autoload, trackList);
+    },
+    addInPlaylist({ id, performer, track_name }) {
+      this.$http.post('/api/playlist/add', { id: id }).then(
+        (response) => {
+          toastr.info(`${performer} - ${track_name} добавлен в ваш плейлист!`);
+          
+          //? update playlist
+          this.$root.$children[8].fetchList();
+        },
+        (error) => {
+          toastr.error('Произошла ошибка при попытки добавления песни в плейлист', 'Error #31');
+        }
+      );
     },
   }
 };

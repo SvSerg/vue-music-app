@@ -6,7 +6,7 @@ html, body {
 }
 body {
   color: black;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .a {
@@ -292,4 +292,10 @@ input[type=range]:focus::-ms-fill-upper {
 .info-body {
   color: grey;
   margin: 5px 10px;
+}
+
+/* alerts */
+.alert {
+  margin-bottom: 15px;
+  border-radius: 0;
 }

@@ -53,6 +53,9 @@
 
 				<!-- user panel  -->
 				<v-user v-if="!this.user"></v-user>
+				<v-userpanel v-if="this.user"></v-userpanel>
+				<!-- playlist  -->
+				<v-playlist v-if="this.user"></v-playlist>
 			</div>
 			<!-- menu -->
 

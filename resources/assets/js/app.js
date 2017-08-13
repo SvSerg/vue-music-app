@@ -1,16 +1,22 @@
 import Vue from 'vue';
 import toastr from 'toastr';
 import router from './router';
+import './api';
+
 import Player from './components/Player';
 import Loading from './components/Loading';
 import SearchStream from './components/SearchStream';
+import RegisterPanel from './components/RegisterPanel';
+import Playlist from './components/Playlist';
 import UserPanel from './components/UserPanel';
-import './api';
+
 
 Vue.component('vue-player', Player);
 Vue.component('v-loading', Loading);
 Vue.component('v-search', SearchStream);
-Vue.component('v-user', UserPanel);
+Vue.component('v-user', RegisterPanel);
+Vue.component('v-playlist', Playlist);
+Vue.component('v-userpanel', UserPanel);
 
 new Vue({
   el: '#app',

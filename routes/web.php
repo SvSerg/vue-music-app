@@ -20,6 +20,12 @@ Route::middleware(['web'])->group(function () {
 	Route::post('/api/stream/search', 'StreamController@search');
 	Route::post('/api/stream/count-search', 'StreamController@countSearch');
 });
+
+Route::middleware(['web', 'auth'])->group(function () {
+	Route::post('/api/playlist/add', 'PlaylistController@add');
+	Route::post('/api/playlist/get', 'PlaylistController@get');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
