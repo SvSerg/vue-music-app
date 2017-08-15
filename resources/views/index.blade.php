@@ -56,6 +56,8 @@
 				<v-userpanel v-if="this.user"></v-userpanel>
 				<!-- playlist  -->
 				<v-playlist v-if="this.user"></v-playlist>
+				<!-- random-list -->
+				<v-randomlist></v-randomlist>
 			</div>
 			<!-- menu -->
 

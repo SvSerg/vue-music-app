@@ -9,6 +9,7 @@ import SearchStream from './components/SearchStream';
 import RegisterPanel from './components/RegisterPanel';
 import Playlist from './components/Playlist';
 import UserPanel from './components/UserPanel';
+import RandomList from './components/RandomList';
 
 
 Vue.component('vue-player', Player);
@@ -17,6 +18,7 @@ Vue.component('v-search', SearchStream);
 Vue.component('v-user', RegisterPanel);
 Vue.component('v-playlist', Playlist);
 Vue.component('v-userpanel', UserPanel);
+Vue.component('v-randomlist', RandomList);
 
 new Vue({
   el: '#app',

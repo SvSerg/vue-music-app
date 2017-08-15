@@ -45,7 +45,7 @@ export default {
           toastr.info(`${performer} - ${track_name} добавлен в ваш плейлист!`);
           
           //? update playlist
-          this.$root.$children[8].fetchList();
+          this.$root.$children[9].fetchList();
         },
         (error) => {
           toastr.error('Произошла ошибка при попытки добавления песни в плейлист', 'Error #31');

@@ -20,6 +20,16 @@ class PlaylistController extends Controller {
 		}
 	}
 
+	public function update(Request $request) {
+		$items = $request->input('playlist');
+		return User::where('id', Auth::id())->update(['playlist' => json_encode($items)]);
+	}
+
+	public function getRandom(Request $request) {
+		$items = Stream::inRandomOrder()->limit($request->input('limit'))->get();
+		return response()->json($items);
+	}
+
 	public function get(Request $request) {
 		if(Auth::user()['playlist'] !== null) {
 			//? if in playlist has data
@@ -36,6 +46,10 @@ class PlaylistController extends Controller {
 					array_push($result, Stream::where('id', [$items[$key] => $value])->get());
 				}
 			}
+			$result = [
+				'result' => $result,
+				'extend' => $items,
+			];
 			return response()->json($result);
 		}
 		else {

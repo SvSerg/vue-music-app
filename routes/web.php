@@ -24,7 +24,10 @@ Route::middleware(['web'])->group(function () {
 Route::middleware(['web', 'auth'])->group(function () {
 	Route::post('/api/playlist/add', 'PlaylistController@add');
 	Route::post('/api/playlist/get', 'PlaylistController@get');
+	Route::post('/api/playlist/update', 'PlaylistController@update');
 });
+
+Route::post('/api/playlist/get-random', 'PlaylistController@getRandom');
 
 Auth::routes();
 
